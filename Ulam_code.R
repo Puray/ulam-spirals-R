@@ -1,4 +1,4 @@
-
+even <- function(x) x %% 2 == 0
     
 Ulam.Spiral<-function(N){
   if (even(N)){
@@ -175,6 +175,7 @@ spiral<- Ulam.Spiral(201)
 p<-Prime.Marker(201, spiral)
 
 #ggplot the 
+library(ggplot2)
 g<-ggplot(p[which(p[,4] == 1),], aes(x = x, y = y, label=as.character(n), color = as.character(p))) 
 g<-g+geom_point() 
 g<-g+geom_point( data=p[which(p[,4] == 0),] , aes(x = x, y = y, label=as.character(n), color = as.character(p) ),alpha=0.15)
